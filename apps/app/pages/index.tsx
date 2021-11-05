@@ -8,7 +8,7 @@ export const Index = () => {
 
   return (
     <Box>
-      <SimpleTextModifier onDataChanged={(d) => setData(d)} />
+      <SimpleTextModifier setData={setData} />
       <SimpleText data={data} />
     </Box>
   );

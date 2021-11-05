@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
 
 const initialSimpleTextDef: SimpleTextDef = {
   text: '',
+  height: ''
 };
 
 export const SimpleTextModifier = (props: {
@@ -33,7 +34,7 @@ export const SimpleTextModifier = (props: {
     });
   };
 
-  const updateText = debounce((v: string) => updateProperty('text', v), 300);
+  const updateText = debounce((key, v: string) => updateProperty(key, v), 300);
 
   useEffect(() => {
     props.onDataChanged(data);
@@ -43,11 +44,20 @@ export const SimpleTextModifier = (props: {
   return (
     <Box padding="1rem">
       <TextField
+        name="text"
         style={{ width: '100%' }}
         className={`${classes.editor}`}
         variant="outlined"
         defaultValue={data.text || ''}
-        onChange={(e) => updateText(e.target.value)}
+        onChange={(e) => updateText(e.target.name, e.target.value)}
+      />
+      <TextField
+        name="height"
+        style={{ width: '100%' }}
+        className={`${classes.editor}`}
+        variant="outlined"
+        defaultValue={data.text || ''}
+        onChange={(e) => updateText(e.target.name, e.target.value)}
       />
     </Box>
   );

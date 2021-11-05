@@ -5,6 +5,7 @@ import { SimpleTextModifier } from '../components/SimpleTextModifier';
 
 export const Index = () => {
   const [data, setData] = useState<SimpleTextDef>();
+
   return (
     <Box>
       <SimpleTextModifier onDataChanged={(d) => setData(d)} />

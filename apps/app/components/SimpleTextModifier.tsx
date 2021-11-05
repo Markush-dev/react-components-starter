@@ -16,7 +16,8 @@ const initialSimpleTextDef: SimpleTextDef = {
 };
 
 export const SimpleTextModifier = (props: {
-  setData
+  setData,
+  onDataChanged
 }) => {
   const classes = useStyles();
   const [data, setData] = useState<SimpleTextDef>(() => ({
@@ -37,7 +38,7 @@ export const SimpleTextModifier = (props: {
   const updateText = debounce((key, v: string) => updateProperty(key, v), 300);
 
   useEffect(() => {
-    setData(data);
+    props.onDataChanged(data);
     return;
   }, [data]);
 

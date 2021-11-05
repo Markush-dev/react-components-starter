@@ -6,9 +6,11 @@ import { SimpleTextModifier } from '../components/SimpleTextModifier';
 export const Index = () => {
   const [data, setData] = useState<SimpleTextDef>();
 
+  console.log(data)
+
   return (
     <Box>
-      <SimpleTextModifier setData={setData} />
+      <SimpleTextModifier setData={setData} onDataChanged={(e) => setData(e)} />
       <SimpleText data={data} />
     </Box>
   );

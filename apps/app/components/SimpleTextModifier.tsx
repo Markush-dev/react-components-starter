@@ -44,16 +44,18 @@ export const SimpleTextModifier = (props: {
   return (
     <Box padding="1rem">
       <TextField
+        label="Text"
         name="text"
         style={{ width: '100%' }}
         className={`${classes.editor}`}
-        variant="outlined"
+        variant="outlined" 
         defaultValue={data.text || ''}
         onChange={(e) => updateText(e.target.name, e.target.value)}
-      />
+      /> 
       <TextField
+        label="Height"
         name="height"
-        style={{ width: '100%' }}
+        style={{ width: '100%', marginTop: '1rem' }} 
         className={`${classes.editor}`}
         variant="outlined"
         defaultValue={data.text || ''}
